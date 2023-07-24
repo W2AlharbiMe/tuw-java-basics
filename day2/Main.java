@@ -87,11 +87,8 @@ public class Main {
         int number3 = input.nextInt();
 
 
-        if ((number1 + number2) == number3) {
-            System.out.println(true);
-        } else {
-            System.out.println(false);
-        }
+        System.out.println((number1 + number2) == number3);
+        
 
 //        7.Take three numbers from the user and print the greatest number.
 
