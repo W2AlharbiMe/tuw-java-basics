@@ -48,8 +48,13 @@ public class Main {
 
         System.out.println("Enter a number:");
         int number = input.nextInt();
-//        I used ternary operator here because I think it's redundant to use if else for this check
-        int response = (number % 2 == 0) ? 1 : 0;
+
+        if (number % 2 == 0) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
+        }
+        
         System.out.println(response);
 
 
