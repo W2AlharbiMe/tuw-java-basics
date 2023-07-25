@@ -23,6 +23,23 @@ class Main {
                 System.out.println(i);
             }
         }
+
+
+        //  2.Write a Java program to reverse a string.
+
+        System.out.println("Enter any Word:");
+        String word = s.nextLine();
+        String output = "";
+
+        for (int i = word.length(); i > 0; i--) {
+            output += word.charAt(i - 1);
+
+            if(i == 0) {
+                break;
+            }
+        }
+
+        System.out.println(output);
         
     }
 }
