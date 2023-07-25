@@ -180,7 +180,7 @@ class Main {
 
             // linear approach -> O(n)
             // when n == 2 the operation will be constant time -> O(1).
-            // because 2 <= 2 == true
+            // because 2 / 2 = 1. 2 is greater than 1.
             for (int i = 2; i <= n / 2; i++) {
                 if(n % i == 0) {
                     System.out.println("The number " + n + " is not a prime.");
