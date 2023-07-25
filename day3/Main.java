@@ -34,10 +34,6 @@ class Main {
 
         for (int i = word.length(); i > 0; i--) {
             output += word.charAt(i - 1);
-
-            if(i == 0) {
-                break;
-            }
         }
 
         System.out.println(output);
