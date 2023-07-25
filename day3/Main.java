@@ -64,19 +64,20 @@ class Main {
         int n = s.nextInt();
 
         int total = 1;
-        String output = "The Numbers You Entered Are:";
+        String output = "The Numbers for factorial "+ n + "! are:";
 
         for (int i = n; i > 0; i--) {
-            if (i == 0) {
-                break;
-            }
-
             output += "\n" + i;
 
             total *= i;
         }
 
-        output += "\nTotal: " + total;
+        if(total == 0) {
+            output = "The Factorial for number ("+n+") Exceeded Memory!!!";
+        } else {
+            output += "\nTotal: " + total; // if value is 0 then you exceeded int limit size.
+        }
+
 
         System.out.println(output);
 
