@@ -261,6 +261,24 @@ class Main {
                 System.out.println("Day" + j);
             }
         }
+
+
+        // 10.Write a program thats check if the word is a palindrome or not. hint: A string is said to be a palindrome if it is the same if we start reading it from left to right or right to left.
+
+        System.out.println("Enter a word to check if it's a palindrome or not:");
+        String word = s.nextLine();
+
+        String reversed = "";
+
+        for (int i = word.length(); i > 0; i--) {
+            reversed += word.charAt(i - 1);
+        }
+
+        if (word.equals(reversed)) {
+            System.out.println("The word "+ word +" is palindrome. you can read it from left to right and from right to left.");
+        } else {
+            System.out.println("The word " + word + " is not palindrome.");
+        }
         
         
     }
