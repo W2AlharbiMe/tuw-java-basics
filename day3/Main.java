@@ -59,6 +59,29 @@ class Main {
 
             break;
         } while(true);
+
+
+        // 4.Write a program to find the factorial value of any number entered through the keyboard.
+
+        System.out.println("Enter a number to get it's factorial: ");
+        int n = s.nextInt();
+
+        int total = 1;
+        String output = "The Numbers You Entered Are:";
+
+        for (int i = n; i > 0; i--) {
+            if (i == 0) {
+                break;
+            }
+
+            output += "\n" + i;
+
+            total *= i;
+        }
+
+        output += "\nTotal: " + total;
+
+        System.out.println(output);
         
     }
 }
