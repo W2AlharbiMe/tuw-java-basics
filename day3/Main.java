@@ -130,6 +130,7 @@ class Main {
 
         int sum_even = 0;
         int sum_odd = 0;
+        String numbers = "Numbers you entered:\n":
 
         do {
 
@@ -148,9 +149,11 @@ class Main {
                 sum_odd += number;
             }
 
+            numbers += number + ", ";
+
         } while(true);
 
-        System.out.println("Total Sum of Even Numbers: " + sum_even + "\nAnd Total Sum of Odd Numbers: " + sum_odd);
+        System.out.println("Total Sum of Even Numbers: " + sum_even + "\nAnd Total Sum of Odd Numbers: " + sum_odd + "\n" + numbers);
         
     }
 }
