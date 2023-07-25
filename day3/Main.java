@@ -197,6 +197,66 @@ class Main {
 
             break;
         } while(true);
+
+
+        // 8.Write a program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros entered.
+
+
+        int positive_count = 0;
+        int negative_count = 0;
+        int zeros_count = 0;
+
+        String positive_numbers = "\nPositive Numbers You Entered:\n";
+        String negative_numbers = "\nNegative Numbers You Entered:\n";
+        String zeros_numbers = "\nZeros Numbers You Entered:\n";
+
+        do {
+            System.out.println("Enter any number or enter (q) to quit:");
+
+            String input = s.nextLine();
+
+            if(input.equalsIgnoreCase("q")) {
+                break;
+            }
+
+
+            int number = 0;
+
+            try {
+                number = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("you entered an invalid input try again. enter any number or q to quit.");
+                continue;
+            }
+
+
+            if(number > 0) {
+                positive_count += 1;
+                positive_numbers += number + ", ";
+            }
+
+            if(number < 0) {
+                negative_count += 1;
+                negative_numbers += number + ", ";
+            }
+
+            if (number == 0) {
+                zeros_count += 1;
+                zeros_numbers += number + ", ";
+            }
+
+
+
+        } while(true);
+
+        String output = "Positive Numbers Count: " + positive_count;
+        output += "\nNegative Numbers Count: " + negative_count;
+        output += "\nZeros Number Count: " + zeros_count + "\n";
+
+        output += positive_numbers + negative_numbers + zeros_numbers;
+
+        System.out.println(output);
+        
         
     }
 }
