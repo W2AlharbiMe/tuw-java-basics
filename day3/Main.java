@@ -125,6 +125,32 @@ class Main {
 
         System.out.println("The numbers you entered are: " + number1 + " ** " + number2 + " = " + total);
 
+
+        // 6.Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
+
+        int sum_even = 0;
+        int sum_odd = 0;
+
+        do {
+
+            System.out.println("Enter any number or enter 0 to quit:");
+            int number = s.nextInt();
+
+            if(number == 0) {
+                break;
+            }
+
+            if(number % 2 == 0) {
+                sum_even += number;
+            }
+
+            if (number % 2 == 1) {
+                sum_odd += number;
+            }
+
+        } while(true);
+
+        System.out.println("Total Sum of Even Numbers: " + sum_even + "\nAnd Total Sum of Odd Numbers: " + sum_odd);
         
     }
 }
