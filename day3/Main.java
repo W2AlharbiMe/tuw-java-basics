@@ -155,6 +155,48 @@ class Main {
         } while(true);
 
         System.out.println("Total Sum of Even Numbers: " + sum_even + "\nAnd Total Sum of Odd Numbers: " + sum_odd + "\n" + numbers);
+
+        // 7.Write a program that prompts the user to input a positive integer. It should then output a message indicating whether the number is a prime number.
+
+        do {
+
+            System.out.println("Enter a number to check if it's a prime number: ");
+
+            int n = s.nextInt();
+
+            if (n < 0) {
+                System.out.println("please enter a positive number.");
+                continue;
+            }
+
+            // optimization tick
+            if (n == 0 || n == 1) {
+                System.out.println("The number " + n + " is not a prime.");
+                break;
+            }
+
+            // assume n is prime
+            boolean n_prime = true;
+
+            // linear approach -> O(n)
+            // when n == 2 the operation will be constant time -> O(1).
+            // because 2 <= 2 == true
+            for (int i = 2; i <= n / 2; i++) {
+                if(n % i == 0) {
+                    System.out.println("The number " + n + " is not a prime.");
+                    n_prime = false;
+                    break; // stop inner loop (optimization tick). got the result now. end the loop don't continue.
+                }
+            }
+
+            // another approach for writing this condition would be: (n / n == 1).
+            if(n % n == 0 && n_prime) {
+                System.out.println("The number " + n + " is a prime.");
+            }
+
+
+            break;
+        } while(true);
         
     }
 }
