@@ -82,6 +82,49 @@ class Main {
         output += "\nTotal: " + total;
 
         System.out.println(output);
+
+
+        // 5.Two numbers are entered through the keyboard. Write a program to find the value of one number raised to the power of another. (Do not use Java built-in method)
+
+
+        // global scope
+        int total = 1, number1 = 0, number2 = 0;
+
+        do {
+            // inner scope 1 used to validate input 1 only
+            System.out.println("Enter number 1: ");
+            number1 = s.nextInt();
+
+            // make sure both numbers are not zeros
+            if (number1 <= 0) {
+                System.out.println("Please enter a positive number that's greater than 0.");
+                continue;
+            }
+
+            do {
+                // inner scope 2 used to validate number 2 after entering number 1 
+                System.out.println("Enter number 2: ");
+                number2 = s.nextInt();
+
+                // make sure both numbers are not zeros
+                if (number2 <= 0) {
+                    System.out.println("Please enter a positive number that's greater than 0.");
+                    continue; // this will start from the 2nd inner loop, exactly from "Enter number 2:"
+                }
+
+
+                for (int i = 1; i <= number2; i++) {
+                    total *= number1; // 5 ** 3, 1 * 5 -> 5, 5 * 5 -> 25, 25 * 5 -> 125
+                }
+
+                break;
+            } while(true);
+
+            break;
+        } while(true);
+
+        System.out.println("The numbers you entered are: " + number1 + " ** " + number2 + " = " + total);
+
         
     }
 }
