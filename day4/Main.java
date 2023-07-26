@@ -151,5 +151,25 @@ class Main {
             }
         }
 
+
+        // 5.Write a Java program to swap the first and last elements of an array and create a new array.
+
+        int[] numbers = {20, 30, 40};
+        int[] swapped = new int[numbers.length];
+        int firstElement = numbers[0];
+        int n = numbers.length;
+
+        for (int i = 0; i < n; i++) {
+            if(i == (n - 1)) {
+                swapped[i] = firstElement;
+                swapped[0] = numbers[i];
+            } else {
+                swapped[i] = numbers[i];
+            }
+        }
+        
+        System.out.println("Original Array: " + Arrays.toString(numbers));
+        System.out.println("New array after swapping the first and last elements: " + Arrays.toString(swapped));
+
     }
 }
