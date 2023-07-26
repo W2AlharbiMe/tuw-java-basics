@@ -96,5 +96,32 @@ class Main {
 
         System.out.println(output);
 
+
+        // 3.Write a Java program to find the numbers greater than the average of the numbers of a given array.
+
+        int[] numbers = {1, 4, 17, 7, 25, 3, 100};
+//        another sample data
+//        int[] numbers = {1, 4, 14, 18, 22, 39, 17, 200, 7, 25, 3, 100};
+
+        int sum = 0;
+        double avg = 0.0f;
+
+        for (int n : numbers) {
+            sum += n;
+        }
+
+        avg = sum / numbers.length;
+
+        String output = "The average of the said array is: " + avg + " The numbers in the said array that are greater than the average are: ";
+
+        for (int n : numbers) {
+            if(n >= avg) {
+                output += n + " ";
+            }
+        }
+
+        System.out.println("Array: " + Arrays.toString(numbers));
+        System.out.println(output);
+
     }
 }
