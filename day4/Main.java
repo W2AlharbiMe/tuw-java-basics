@@ -167,9 +167,71 @@ class Main {
                 swapped[i] = numbers[i];
             }
         }
-        
+
         System.out.println("Original Array: " + Arrays.toString(numbers));
         System.out.println("New array after swapping the first and last elements: " + Arrays.toString(swapped));
+
+
+        // 6.Write a Java program to find all of the longest word in a given dictionary.
+
+        // one way to solve this in optimized manner would be to create array of tuples:
+        // [ [0, 3], [1, 3], [2, 3] ] -> [ [INDEX, LENGTH] ]
+        // 1. create array list with tuples.
+        // 2. sort by length in descending.
+        // 3. only add the longest lengths to the new array list (longest_words).
+        // 4. print
+
+        // words must be unique.
+        String[] words = {"cccc", "a", "cat", "vvvv", "dog", "red", "is", "am", "dddd", "app", ""};
+
+        ArrayList<String> longest_words = new ArrayList<String>();
+
+        ArrayList<int[]> dict = new ArrayList<int[]>();
+
+
+        // 1. fill the array list with each word index and length.
+        for (int i = 0; i < words.length; i++) {
+            String current_word = words[i];
+            int[] tuple = {i, current_word.length()};
+
+            dict.add(tuple);
+        }
+
+        // 2. sort by length.
+        // The sort is bad. bubble sort -> O(n^3)
+        int n = dict.size();
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 1; j < n; j++) {
+                for (int k = i; k < j; k++) {
+                    if(dict.get(i)[1] <= dict.get(j)[1]) {
+                        int[] tmp = dict.get(i);
+                        dict.set(i, dict.get(j));
+                        dict.set(j, tmp);
+                    }
+                }
+            }
+        }
+
+        // 3. only add the longest lengths to the new array list (longest_words).
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 1; j < n; j++) {
+
+                // skip any word that's less than or equal to 1.
+                if(dict.get(j)[1] <= 1) continue;
+
+                if(dict.get(i)[1] > dict.get(j)[1]) {
+                    String current_word = words[dict.get(i)[0]];
+
+                    // only unique words.
+                    if(!longest_words.contains(current_word)) {
+                        longest_words.add(current_word);
+                    }
+                }
+            }
+        }
+
+        // 4. print
+        System.out.println("Result: " + longest_words);
 
     }
 }
