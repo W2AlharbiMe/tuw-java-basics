@@ -89,7 +89,12 @@ class Main {
             counter++;
         }
 
-        System.out.println("Largest " + _k + " Numbers are: " + Arrays.toString(largest_numbers));
+        String output = _k + " largest elements of the said array are: ";
+        for(int ln : largest_numbers) {
+            output += ln + " ";
+        }
+
+        System.out.println(output);
 
     }
 }
