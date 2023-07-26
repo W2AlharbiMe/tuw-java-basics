@@ -21,6 +21,7 @@ class Main {
         int firstElement = numbers[0];
 
         for (int i = 0; i < n; i++) {
+            // make sure i is equal to the last index (numbers.length - 1).
             if(i == (n - 1)) {
                 System.out.println(firstElement == numbers[i]);
             }
