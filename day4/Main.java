@@ -30,10 +30,28 @@ class Main {
         // 2.Write a Java program to find the k largest elements in a given array. Elements in the array can be in any order.
 
 
-        System.out.println("How many large numbers you want to find (k): ");
-        int _k = s.nextInt();
-
+        int _k;
         int[] numbers = {1, 4, 17, 7, 25, 3, 100};
+
+        do {
+            System.out.println("How many large numbers you want to find (k): ");
+            _k = s.nextInt();
+
+            if(_k <= 0) {
+                System.out.println("You can't enter a 0 or a negative number.");
+                continue;
+            }
+
+            if(_k > numbers.length) {
+                System.out.println("You can only enter a number from 1 to 7.");
+                continue;
+            }
+
+            break;
+        } while(true);
+
+
+
 
 //        another sample data.
 //        int[] numbers = {1, 4, 14, 18, 22, 33, 17, 200, 7, 25, 3, 100};
