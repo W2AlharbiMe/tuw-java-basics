@@ -101,7 +101,7 @@ class Main {
 
             do {
                 // inner scope 2 used to validate number 2 after entering number 1 
-                System.out.println("Enter number 2: ");
+                System.out.println("Enter a number to raise ("+ number1 +") to: ");
                 number2 = s.nextInt();
 
                 // make sure both numbers are not zeros
