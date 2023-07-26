@@ -124,5 +124,31 @@ class Main {
         System.out.println("Array: " + Arrays.toString(numbers));
         System.out.println(output);
 
+        
+
+        //  4.Write a Java program to get the larger value between first and last element of an array of integers.
+
+        int[] numbers = {50, 2, 1, 1, 1, 1, 30, 40};
+
+//        the easy approach haha
+//        int n = numbers.length - 1;
+//        System.out.println(numbers[0] > numbers[n] ? numbers[0] : numbers[n]);
+
+//        but to practice:
+
+        int n = numbers.length;
+        int firstElement = numbers[0];
+
+        for (int i = 0; i < n; i++) {
+            // make sure i is equal to the last index (numbers.length - 1).
+            if(i == (n - 1)) {
+                if(firstElement > numbers[i]) {
+                    System.out.println(firstElement);
+                } else {
+                    System.out.println(numbers[i]);
+                }
+            }
+        }
+
     }
 }
