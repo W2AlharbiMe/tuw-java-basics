@@ -9,6 +9,10 @@ class Main {
 
         int[] numbers = {60, 89, 55, 26, 55, 11, 44, 11, 33, 100, 400, 60};
 
+        if(numbers.length < 2) {
+            System.out.println("The array must have at least 2 elements.");
+        }
+
         // the easy approach haha
         // System.out.println(numbers[0] == numbers[numbers.length - 1]);
 
