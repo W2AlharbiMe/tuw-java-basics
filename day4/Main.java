@@ -233,5 +233,71 @@ class Main {
         // 4. print
         System.out.println("Result: " + longest_words);
 
+
+
+
+
+
+
+
+
+
+
+
+
+        // 9. Write a program that places the odd elements of an array before the even elements.
+
+        int[] numbers = {2,3,40,1,5,9,4,10,7};
+        int n = numbers.length;
+
+        int[] even = new int[n];
+        int[] odd = new int[n];
+        int[] all =  new int[n];
+
+        int even_counter = 0;
+        int odd_counter = 0;
+        int all_counter = 0;
+
+        for (int i = 0; i < n; i++) {
+            if(numbers[i] % 2 == 1) {
+                odd[odd_counter] = numbers[i];
+                odd_counter++;
+            } else {
+                even[even_counter] = numbers[i];
+                even_counter++;
+            }
+        }
+
+        for (int i = 0; i < odd.length; i++) {
+            if(odd[i] > 0) {
+                all[all_counter] = odd[i];
+                all_counter++;
+            }
+        }
+
+        for (int i = 0; i < even.length; i++) {
+            if(even[i] > 0) {
+                all[all_counter] = even[i];
+                all_counter++;
+            }
+        }
+
+        System.out.println(Arrays.toString(all));
+
+
+
+
+
+
+
+
+
+        // 10. Write a program that test the equality of two arrays.
+
+        int[] nums1 = {2,3,6,6,4};
+        int[] nums2 = {2,3,6,6,4};
+
+        System.out.println(nums1.length == nums2.length
+
     }
 }
