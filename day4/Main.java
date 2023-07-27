@@ -464,6 +464,7 @@ class Main {
                     map.put(key, 0);
                 }
 
+                // Note: this check is useless, but good to have it just in case.
                 if (count > value) {
                     map.put(key, count);
                 }
