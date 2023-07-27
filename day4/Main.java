@@ -239,7 +239,47 @@ class Main {
 
 
 
+        // 8. Write a program thats displays the number of occurrences of an element in the array.
 
+
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        int[] numbers = {1,1,1,3,3,9};
+
+        for (int i = 0; i < numbers.length; i++) {
+            if(map.containsKey(numbers[i])) {
+                map.put(numbers[i], map.get(numbers[i]) + 1);
+            } else {
+                map.put(numbers[i], 1);
+            }
+        }
+
+
+        for (int key: map.keySet()) {
+            int value = map.get(key);
+            if(value == 1) {
+                int count = 0;
+
+                for (int i = 0; i < numbers.length; i++) {
+                    if(key == numbers[i]) {
+                        count++;
+                    }
+                }
+
+                if(count == value) {
+                    map.put(key, 0);
+                }
+            }
+
+        }
+
+        String output = "";
+
+        for(int key : map.keySet()) {
+            output += key + " occurs " + map.get(key) + " times\n";
+        }
+
+        System.out.println(output);
 
 
 
