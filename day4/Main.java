@@ -463,6 +463,10 @@ class Main {
                 if(count == value) {
                     map.put(key, 0);
                 }
+
+                if (count > value) {
+                    map.put(key, count);
+                }
             }
 
         }
