@@ -293,7 +293,7 @@ class Main {
 
                     do {
 
-                        System.out.println("Enter any number to go back enter (b) or enter (q) to close the program:");
+                        System.out.println("Add any number you want. to go back enter (b) or enter (q) to close the program:");
 
                         try {
                           String input = s.nextLine();
@@ -360,7 +360,7 @@ class Main {
 
                     do {
 
-                        System.out.println("Search for numbers. to go back enter (b) or enter (q) to close the program.");
+                        System.out.println("Enter any number to look for. to go back enter (b) or enter (q) to close the program.");
 
                         try {
                             String input = s.nextLine();
