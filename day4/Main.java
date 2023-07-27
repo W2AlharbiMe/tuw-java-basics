@@ -337,7 +337,7 @@ class Main {
         int[] nums1 = {2,3,6,6,4};
         int[] nums2 = {2,3,6,6,4};
 
-        System.out.println(nums1.length == nums2.length
+        System.out.println(nums1.length == nums2.length);
 
     }
 }
