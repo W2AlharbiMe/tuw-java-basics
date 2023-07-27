@@ -27,8 +27,12 @@ class Main {
             }
         }
 
+        // ************************************************************
+
+
 
         // 2.Write a Java program to find the k largest elements in a given array. Elements in the array can be in any order.
+        
 
 
         int _k;
@@ -98,6 +102,9 @@ class Main {
         System.out.println(output);
 
 
+        // ************************************************************
+
+
         // 3.Write a Java program to find the numbers greater than the average of the numbers of a given array.
 
         int[] numbers = {1, 4, 17, 7, 25, 3, 100};
@@ -125,8 +132,11 @@ class Main {
         System.out.println(output);
 
 
+        // ************************************************************
 
-        //  4.Write a Java program to get the larger value between first and last element of an array of integers.
+
+
+        // 4. Write a Java program to get the larger value between first and last element of an array of integers.
 
         int[] numbers = {50, 2, 1, 1, 1, 1, 30, 40};
 
@@ -151,6 +161,9 @@ class Main {
             }
         }
 
+        // ************************************************************
+
+
 
         // 5.Write a Java program to swap the first and last elements of an array and create a new array.
 
@@ -171,15 +184,18 @@ class Main {
         System.out.println("Original Array: " + Arrays.toString(numbers));
         System.out.println("New array after swapping the first and last elements: " + Arrays.toString(swapped));
 
+        // ************************************************************
+
+
 
         // 6.Write a Java program to find all of the longest word in a given dictionary.
 
         // one way to solve this in optimized manner would be to create array of tuples:
         // [ [0, 3], [1, 3], [2, 3] ] -> [ [INDEX, LENGTH] ]
-        // 1. create array list with tuples.
-        // 2. sort by length in descending.
-        // 3. only add the longest lengths to the new array list (longest_words).
-        // 4. print
+        // 1- create array list with tuples.
+        // 2- sort by length in descending.
+        // 3- only add the longest lengths to the new array list (longest_words).
+        // 4- print
 
         // words must be unique.
         String[] words = {"cccc", "a", "cat", "vvvv", "dog", "red", "is", "am", "dddd", "app", ""};
@@ -189,7 +205,7 @@ class Main {
         ArrayList<int[]> dict = new ArrayList<int[]>();
 
 
-        // 1. fill the array list with each word index and length.
+        // 1- fill the array list with each word index and length.
         for (int i = 0; i < words.length; i++) {
             String current_word = words[i];
             int[] tuple = {i, current_word.length()};
@@ -197,7 +213,7 @@ class Main {
             dict.add(tuple);
         }
 
-        // 2. sort by length.
+        // 2- sort by length.
         // The sort is bad. bubble sort -> O(n^3)
         int n = dict.size();
         for (int i = 0; i < n - 1; i++) {
@@ -212,7 +228,9 @@ class Main {
             }
         }
 
-        // 3. only add the longest lengths to the new array list (longest_words).
+        
+
+        // 3- only add the longest lengths to the new array list (longest_words).
         for (int i = 0; i < n - 1; i++) {
             for (int j = 1; j < n; j++) {
 
@@ -230,13 +248,189 @@ class Main {
             }
         }
 
-        // 4. print
+        // 4- print
         System.out.println("Result: " + longest_words);
 
 
+        // ************************************************************
 
 
+        // 7.Write a menu driven Java program with following option:
 
+        String[] menu = {
+                "Accept elements of an array",
+                "Display elements of an array",
+                "Search the element within array",
+                "Sort the array",
+                "To Stop"
+        };
+
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+        boolean terminate = false;
+
+
+        while (!terminate) {
+            System.out.println("Choose from the menu:");
+
+            for (int i = 0; i < menu.length; i++) {
+                System.out.println((i+1) + ". " + menu[i]);
+            }
+
+            int choice = s.nextInt();
+
+            // this is used to intercept the newline from nextInt. so I can use nextLine without issues.
+            s.nextLine();
+
+            // optimization tick.
+            if(choice == 5) break;
+
+            switch (choice) {
+
+                // add numbers
+                case 1:
+                    System.out.println("--------------------");
+
+                    do {
+
+                        System.out.println("Enter any number to go back enter (b) or enter (q) to close the program:");
+
+                        try {
+                          String input = s.nextLine();
+
+                          // you can press enter and the program will start again from inner loop.
+                          if(input.isBlank() || input.isBlank()) continue;
+
+                          if(input.equalsIgnoreCase("b")) {
+                              break;
+                          }
+
+                          if(input.equalsIgnoreCase("q")) {
+                              terminate = true;
+                              break;
+                          }
+
+                          int n = Integer.parseInt(input);
+
+                          numbers.add(n);
+
+                          continue; // continue inner loop.
+
+                        } catch(NumberFormatException e) {
+                            System.out.println("You entered an invalid number. to go back enter (b) or enter (q) to close the program.");
+                            continue;
+                        }
+
+
+                    } while(true);
+
+                    System.out.println("--------------------");
+
+
+                    // this will render the menu again, and ask for choice.
+                    continue;
+
+
+                // show all entered numbers.
+                case 2:
+                    System.out.println("--------------------");
+
+
+                    System.out.println("Numbers you have entered:");
+
+                    for (int n : numbers) {
+                        System.out.println(n);
+                    }
+
+                    System.out.println("--------------------");
+
+                    System.out.println("Press [ENTER] to go back or enter (q) to close the program.");
+                    String line = s.nextLine();
+
+                    if(line.equalsIgnoreCase("q")) {
+                        terminate = true;
+                        break;
+                    }
+
+                    continue;
+
+                case 3:
+                    System.out.println("--------------------");
+
+
+                    do {
+
+                        System.out.println("Search for numbers. to go back enter (b) or enter (q) to close the program.");
+
+                        try {
+                            String input = s.nextLine();
+
+                            // you can press enter and the program will start again from inner loop.
+                            if(input.isBlank() || input.isBlank()) continue;
+
+                            if(input.equalsIgnoreCase("b")) {
+                                break;
+                            }
+
+                            if(input.equalsIgnoreCase("q")) {
+                                terminate = true;
+                                break;
+                            }
+
+                            int n = Integer.parseInt(input);
+
+                            String output = "The Number (" + n + ")";
+                            output += numbers.contains(n) ? " Exists." : " Does not exists.";
+
+                            System.out.println(output);
+
+                            continue;
+
+                        } catch(NumberFormatException e) {
+                            System.out.println("You entered an invalid number. to go back enter (b) or enter (q) to close the program.");
+                            continue;
+                        }
+
+
+                    } while(true);
+
+                    System.out.println("--------------------");
+
+
+                    continue;
+
+                case 4:
+                    System.out.println("--------------------");
+
+
+                    Collections.sort(numbers);
+
+                    for(int n : numbers) {
+                        System.out.println(n);
+                    }
+
+                    System.out.println("--------------------");
+
+                    System.out.println("Press [ENTER] to go back or enter (q) to close the program.");
+                    line = s.nextLine();
+
+                    if(line.equalsIgnoreCase("q")) {
+                        terminate = true;
+                        break;
+                    }
+
+                    continue;
+
+                default:
+                    System.out.println("Invalid choice you can only choose from the menu 1 to 5.");
+                    continue;
+            }
+
+            break;
+        }
+
+
+        // ************************************************************
 
 
         // 8. Write a program thats displays the number of occurrences of an element in the array.
@@ -283,6 +477,7 @@ class Main {
 
 
 
+        // ************************************************************
 
 
         // 9. Write a program that places the odd elements of an array before the even elements.
@@ -327,9 +522,7 @@ class Main {
 
 
 
-
-
-
+        // ************************************************************
 
 
         // 10. Write a program that test the equality of two arrays.
