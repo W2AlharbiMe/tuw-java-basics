@@ -4,20 +4,24 @@ import java.util.Scanner;
 public class Validate {
 
     public static int[] parse(String str, Scanner s) {
-        int[] response = {0, 0};
+        int[] response = {-1, 0};
 
         try {
             int data = Integer.parseInt(str);
             response[1] = data;
+            response[0] = 0;
 
             return response;
-        } catch(NumberFormatException e) {
+        } catch(NumberFormatException e1) {
             System.out.println("The choice you entered is invalid. choose from 1 to 9");
-            response[0] = -1;
             GameSystem.hold(s);
 
             return response;
+        } catch(Exception e2) {
+            System.out.println(e2.getMessage());
         }
+
+        return response;
     }
 
 

@@ -19,7 +19,19 @@ public class Computer {
         int min = available_positions.size() - 1;
         int index = (int) ((Math.random() * (max - min)) + min);
 
-        return available_positions.size() > 0 ? available_positions.get(index) : - 1;
+        try {
+            int item = available_positions.size() > 0 ? available_positions.get(index) : -1;
+
+            return item;
+        } catch(IndexOutOfBoundsException e1) {
+            // NO TURNS LEFT. GamePlay Class will handle it.
+            System.out.println("NO TURNS LEFT.");
+
+        } catch(Exception e2) {
+            System.out.println(e2.getMessage());
+        }
+
+        return -1;
     }
 
 }
