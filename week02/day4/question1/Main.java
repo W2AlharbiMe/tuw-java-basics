@@ -17,7 +17,7 @@ public class Main {
 
         System.out.println(
                 "Move Name: " + m1.getName() +
-                "\nBook Price: " + m1.getPrice() +
+                "\nMovie Price: " + m1.getPrice() +
                 "\nDirector: " + m1.getDirector() +
                 "\nPrice after 10% discount: " + m1.getDiscount()
         );
